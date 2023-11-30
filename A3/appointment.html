@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <title>Dark Mode</title> -->
+    <title>Appointment Scheduling</title>
+</head>
+<body>
+    <div class="switch">Dark mode:
+        <span class="inner-switch">OFF</span>
+    </div>
+
+    <!----> 
+
+    <h1>Available Time Slots</h1>
+
+    <div id="timeSlots" class="time-slot-container">
+        <!-- Time slots will be dynamically populated here -->
+    </div>
+
+
+    <!-- The Location Header-->
+    <h2>Available Physical Locations</h2>
+
+    <div id="locations" class ="locations-slot-container">
+        <!-- Locations will be dynamically populated here-->
+    </div>
+
+    <button id="viewTimeSlotsBtn">
+        View Time Slots
+    </button>
+
+    <button id = "makeAppointmentBtn">
+        Make Appointment
+    </button>
+
+    
+    <form id="appointmentForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+    
+        <label for="selectedTimeSlot">Select Time Slot:</label>
+        <select id="selectedTimeSlot" required>
+            <!-- Time slots will be dynamically populated here -->
+        </select>
+    
+        <label for="selectedLocation">Select Location:</label>
+        <select id="selectedLocation" required>
+            <!-- Locations will be dynamically populated here -->
+        </select>
+    
+        <button type="submit">Schedule Appointment</button>
+
+        <button onclick="location.href='index.html'">Return back to Our Branch</button>
+    </form>
+
+    <div id="confirmationMessage"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

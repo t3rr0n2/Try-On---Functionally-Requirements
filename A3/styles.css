@@ -83,3 +83,36 @@ img {
     color: #e6e6e6;
     border-color: #e6e6e6;
 }
+
+
+/* Add your existing CSS styles */
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #45a049;
+}
+
+.tab-content {
+    display: none;
+}
+
+/* Default active tab */
+.tabs button.active {
+    background-color: #45a049;
+}
+
+/* Dark mode styles */
+/* Add your existing dark mode styles */

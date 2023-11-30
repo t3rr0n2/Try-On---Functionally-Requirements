@@ -9,53 +9,90 @@
     <title>Appointment Scheduling</title>
 </head>
 <body>
-    <div class="switch">Dark mode:
-        <span class="inner-switch">OFF</span>
+    <div class="switch">
+        Dark mode: <span class="inner-switch">OFF</span>
     </div>
 
     <!----> 
+    <div class="tabs">
+        <button id="viewTimeSlotsBtn" onclick="openTab('ViewTimeSlots')">
+            View Time Slots
+        </button>
+    
+        <button id = "makeAppointmentBtn" onclick="openTab('MakeAppointment')">
+            Make Appointment
+        </button>
 
-    <h1>Available Time Slots</h1>
-
-    <div id="timeSlots" class="time-slot-container">
-        <!-- Time slots will be dynamically populated here -->
+        <button id="storeLocationsTab" onclick="openTab('StoreLocations')">
+            Store Location 
+        </button>
     </div>
 
+  
 
-    <!-- The Location Header-->
-    <h2>Available Physical Locations</h2>
+    <div id="ViewTimeSlots" class="tab-content" >
+        <h1>Available Time Slots</h1>
 
-    <div id="locations" class ="locations-slot-container">
-        <!-- Locations will be dynamically populated here-->
-    </div>
-
-    <button id="viewTimeSlotsBtn">
-        View Time Slots
-    </button>
-
-    <button id = "makeAppointmentBtn">
-        Make Appointment
-    </button>
-
-    
-    <form id="appointmentForm">
-        <label for="fullName">Full Name:</label>
-        <input type="text" id="fullName" required>
-    
-        <label for="selectedTimeSlot">Select Time Slot:</label>
-        <select id="selectedTimeSlot" required>
+        <div id="timeSlots" class="time-slot-container">
             <!-- Time slots will be dynamically populated here -->
-        </select>
-    
-        <label for="selectedLocation">Select Location:</label>
-        <select id="selectedLocation" required>
-            <!-- Locations will be dynamically populated here -->
-        </select>
-    
-        <button type="submit">Schedule Appointment</button>
-
+        </div>
+        
+        <!-- <button id="viewTimeSlotsBtn">View Time Slots</button> -->
         <button onclick="location.href='index.html'">Return back to Our Branch</button>
-    </form>
+    </div>
+
+    
+
+    <div id="MakeAppointment" class="tab-content">
+         <!-- The Location Header-->
+        <h1>Let's Schedule that Appointment</h1>
+        <div id="appointmentForm">
+            <!-- Form for making an appointment--> 
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName">
+             
+            
+         
+                <label for="selectedLocation">Select Location:</label>
+                <select id="selectedLocation" required>
+                    <!-- Locations will be dynamically populated here -->
+                </select>
+            
+
+
+            <div id="timeSlots" class="time-slot-container">
+                <!-- Time slots will be dynamically populated here -->
+                   
+                <label for="selectedTimeSlot">Select Time Slot:</label>
+                <select id="selectedTimeSlot" required>
+                    <!-- Time slots will be dynamically populated here -->
+                </select>
+            </div>
+
+            <button type="submit"> Schedule Appointment</button>
+        </div>
+        <div id="confirmationMessage"></div>
+        <button onclick="location.href='index.html'">Return back to Our Branch</button>
+    </div>
+
+   
+    <div id="StoreLocations" class="tab-content">
+        <h1>Available Store Locations</h1>
+        <div id="locations" class="locations-slot-container">
+
+        </div>
+
+         <!-- Locations will be dynamically populated here-->
+        <div id="locations" class="location-slot-container">
+            <!-- Location slots will be dynamically populated here -->
+        </div>
+        
+     
+        <!-- <button type="ViewLocationBtn">Submit Location</button> -->
+        <button onclick="location.href='index.html'">Return back to Our Branch</button>
+    </div>
+    
+
 
     <div id="confirmationMessage"></div>
 

@@ -50,6 +50,7 @@ function selectTimeSlot(slot) {
 // Function to display the available location slots
 function displayLocationSlots() {
     const locationSlotContainer = document.getElementById('locations');
+    locationSlotContainer.innerHTML = ''; //Clear previous content
 
     locations.forEach(slot => {
         const button = document.createElement('button');
@@ -64,27 +65,29 @@ function selectLocation(slot) {
     document.getElementById('selectedLocation').value = slot;
 }
 
-// Add event listener for form submission
-document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+// // Add event listener for form submission
+// document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+//     event.preventDefault();
     
-    // Get form values
-    const fullName = document.getElementById('fullName').value;
-    const selectedTimeSlot = document.getElementById('selectedTimeSlot').value;
-    const selectedLocation = document.getElementById('selectedLocation').value;
+//     // Get form values
+//     const fullName = document.getElementById('fullName').value;
+//     const selectedTimeSlot = document.getElementById('selectedTimeSlot').value;
+//     const selectedLocation = document.getElementById('selectedLocation').value;
 
-    // Simulate appointment scheduling (you can replace this with server-side logic)
-    const isSuccessful = simulateAppointmentScheduling(fullName, selectedTimeSlot, selectedLocation);
+//     // Simulate appointment scheduling (you can replace this with server-side logic)
+//     const isSuccessful = simulateAppointmentScheduling(fullName, selectedTimeSlot, selectedLocation);
 
-    // Display confirmation message
-    displayConfirmationMessage(isSuccessful, fullName, selectedTimeSlot, selectedLocation);
-});
+//     // Display confirmation message
+//     displayConfirmationMessage(isSuccessful, fullName, selectedTimeSlot, selectedLocation);
+// });
 
 // Function to simulate appointment scheduling (replace with actual logic)
 function simulateAppointmentScheduling(fullName, timeSlot, location) {
     // Simulate success or failure based on conditions (e.g., availability)
     return Math.random() < 0.8; // 80% success rate (adjust as needed)
 }
+
+
 
 // Function to display confirmation message
 function displayConfirmationMessage(isSuccessful, fullName, timeSlot, location) {
@@ -108,7 +111,7 @@ displayLocationSlots();
 
 
 // Add event listener for form submission
-document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+/* document.getElementById('appointmentForm').addEventListener('submit', function (event) {
     event.preventDefault();
     
     // Get form values
@@ -125,7 +128,7 @@ document.getElementById('appointmentForm').addEventListener('submit', function (
     // Notify the owner (This is a simulated notification)
     notifyOwner(isSuccessful, fullName, selectedTimeSlot, selectedLocation);
 });
-
+ */
 // Function to simulate owner notification (replace with actual logic)
 function notifyOwner(isSuccessful, fullName, timeSlot, location) {
     if (isSuccessful) {
@@ -136,7 +139,6 @@ function notifyOwner(isSuccessful, fullName, timeSlot, location) {
         alert("Confirmation has failed.")
     }
 }
-
 
 
 
@@ -202,4 +204,23 @@ document.getElementById('appointmentForm').addEventListener('submit', function (
 
 // ... (rest of your existing code)
 
+// Function to open tabs
+function openTab(tabName) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabs = document.querySelectorAll('.tabs button');
 
+    tabContents.forEach(content => {
+        content.style.display = 'none';
+    });
+
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    document.getElementById(tabName).style.display = 'block';
+    document.getElementById(tabName + 'Tab').classList.add('active');
+}
+
+
+// Initial tab to display
+openTab('ViewTimeSlots');
